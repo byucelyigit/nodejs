@@ -1,11 +1,13 @@
 const express = require('express');
 const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json'); // Ensure this file exists and is configured
+//const serviceAccount = require('./serviceAccountKey.json'); // Ensure this file exists and is configured
 
 // Initialize Firebase Admin SDK
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+//admin.initializeApp({
+//  credential: admin.credential.cert(serviceAccount),
+//});
+
+admin.initializeApp();
 
 // Initialize Express app.
 const app = express();

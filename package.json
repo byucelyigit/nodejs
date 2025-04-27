@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "serve": "firebase serve"
+    "serve": "firebase serve",
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.2",
     "firebase-admin": "^13.3.0"
-  }  
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
