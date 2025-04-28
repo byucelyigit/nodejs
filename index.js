@@ -1,23 +1,21 @@
 const express = require('express');
-const admin = require('firebase-admin');
-//const serviceAccount = require('./serviceAccountKey.json'); // Ensure this file exists and is configured
+const { initializeApp } = require('firebase-admin/app');
+const { getDatabase } = require('firebase-admin/database');
 
 // Initialize Firebase Admin SDK
-//admin.initializeApp({
-//  credential: admin.credential.cert(serviceAccount),
-//});
+const app = initializeApp();
 
-admin.initializeApp();
+// Initialize Express app
+const expressApp = express();
 
-// Initialize Express app.
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Welcome to Firebase App Hosting  !');
+expressApp.get('/', (req, res) => {
+  res.send('Welcome to Firebase App Hosting!');
 });
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+expressApp.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
