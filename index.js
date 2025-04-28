@@ -8,6 +8,12 @@ expressApp.get('/', (req, res) => {
 });
 
 
+// Health check endpoint
+app.get('/healthz', (req, res) => {
+  // In a real app, you might check database connections, etc.
+  res.status(200).send('OK');
+});
+
 // Start the server
 const PORT = process.env.PORT
 expressApp.listen(PORT, () => {
