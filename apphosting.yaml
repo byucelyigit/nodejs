@@ -1,0 +1,29 @@
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+  # maxInstances: 100
+  # concurrency: 80
+  # cpu: 1
+  # memoryMiB: 512
+
+# Environment variables and secrets.
+# env:
+  # Configure environment variables.
+  # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment
+  # - variable: MESSAGE
+  #   value: Hello world!
+  #   availability:
+  #     - BUILD
+  #     - RUNTIME
+
+  # Grant access to secrets in Cloud Secret Manager.
+  # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
+  # - variable: MY_SECRET
+  #   secret: mySecretRef
+  healthCheck:
+  timeout: "60s"  # Increase the timeout to 60 seconds (or your desired value)
+  checkInterval: "10s" # Time between health checks
+  healthyThreshold: 2 # Number of consecutive successful health checks required before receiving traffic.
+  unhealthyThreshold: 2 # Number of consecutive failed health checks required before removing traffic.
+  restartThreshold: 3 # Number of consecutive failed health checks required before an instance is restarted.
