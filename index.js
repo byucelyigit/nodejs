@@ -1,9 +1,4 @@
 const express = require('express');
-const { initializeApp } = require('firebase-admin/app');
-const { getDatabase } = require('firebase-admin/database');
-
-// Initialize Firebase Admin SDK
-const app = initializeApp();
 
 // Initialize Express app
 const expressApp = express();
